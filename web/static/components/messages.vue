@@ -23,10 +23,10 @@ export default {
 #messages-list {
     padding-top: 20px;
     padding-left: 20px;
-    float: left;
     ul {
         list-style: none;
         padding: 0;
+        width: 50vw;
         li {
             padding: 5px 0;
             &.message-appear-enter-active, &.message-appear-leave-active {

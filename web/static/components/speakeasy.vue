@@ -1,35 +1,48 @@
 <template>
-<div class="row" id="user-list">
-  <h4 id="status"></h4>
-  <md-card>
-    <md-card-media-cover md-text-scrim>
-      <md-card-media>
-        <video id="caller-video"></video>
-      </md-card-media>
-      <md-card-area>
-       <md-card-header>
-        <div class="md-title">Them</div>
-       </md-card-header> 
-      </md-card-area>
-    </md-card-media-cover>
-  </md-card>
-  <md-card>
-    <md-card-media-cover md-text-scrim>
-      <md-card-media>
-        <video id="my-video"></video>
-      </md-card-media>
-      <md-card-area>
-       <md-card-header>
-        <div class="md-title">Me</div>
-       </md-card-header> 
-      </md-card-area>
-    </md-card-media-cover>
-  </md-card>
-  <messages v-bind:messages="messages"></messages>
+<div class="speakeasy">
+  <md-layout md-gutter>
+    <md-layout md-flex="25" md-flex-offset="25"><h4 id="status"></h4></md-layout>
+  </md-layout>
+  <md-layout md-gutter>
+    <md-layout md-flex="25" md-flex-offset="25" md-gutter>
+      <md-card>
+        <md-card-media-cover md-text-scrim>
+          <md-card-media>
+            <video id="caller-video"></video>
+          </md-card-media>
+          <md-card-area>
+          <md-card-header>
+            <div class="md-title">Them</div>
+          </md-card-header> 
+          </md-card-area>
+        </md-card-media-cover>
+      </md-card>
+    </md-layout>
+    <md-layout md-flex="25">
+    <md-card>
+        <md-card-media-cover md-text-scrim>
+          <md-card-media>
+            <video id="my-video"></video>
+          </md-card-media>
+          <md-card-area>
+          <md-card-header>
+            <div class="md-title">Me</div>
+          </md-card-header> 
+          </md-card-area>
+        </md-card-media-cover>
+      </md-card>
+    </md-layout>
+  </md-layout>
+  <md-layout md-gutter>
+    <md-layout md-flex="25" md-flex-offset="25">
+      <messages v-bind:messages="messages"></messages>
       <div id="your-message">
         <input type="text" placeholder="What do you have to say?" v-model="message" v-on:keyup.13="sendMessage">
       </div>
+    </md-layout>
+  </md-layout>
 </div>
+
 </template>
 
 <script>
@@ -168,5 +181,18 @@ export default {
 </script>
 
 <style lang="sass">
-
+.speakeasy {
+  #your-message {
+    background: white;
+    input {
+      width: 50vw;
+      padding: 5px 8px;
+      border-radius: 3px;
+      outline: 0;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      font-family: Roboto;
+    }
+  }
+}
 </style>
