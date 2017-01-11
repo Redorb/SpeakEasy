@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :speakeasy, Speakeasy.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "herokuapp.com", port: 80],
+  url: [host: "speakeasy42.herokuapp.com", port: 80],
   cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production
