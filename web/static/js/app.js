@@ -2,6 +2,8 @@ import "phoenix_html"
 import Vue from 'vue'
 import VueMaterial from 'vue-material'
 import Speakeasy from "../components/speakeasy.vue"
+import Peer from "simple-peer"
+import getUserMedia from "getusermedia"
 
 
 Vue.use(VueMaterial)
