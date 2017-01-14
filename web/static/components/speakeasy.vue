@@ -3,36 +3,7 @@
   <md-layout md-gutter>
     <md-layout md-flex="25" md-flex-offset="25"><h4 id="status"></h4></md-layout>
   </md-layout>
-  <md-layout md-gutter>
-    <md-layout md-flex="25" md-flex-offset="25" md-gutter>
-      <md-card>
-        <md-card-media-cover md-text-scrim>
-          <md-card-media>
-            <video id="caller-video"></video>
-          </md-card-media>
-          <md-card-area>
-          <md-card-header>
-            <div class="md-title">Them</div>
-          </md-card-header> 
-          </md-card-area>
-        </md-card-media-cover>
-      </md-card>
-    </md-layout>
-    <md-layout md-flex="25">
-    <md-card>
-        <md-card-media-cover md-text-scrim>
-          <md-card-media>
-            <video id="my-video"></video>
-          </md-card-media>
-          <md-card-area>
-          <md-card-header>
-            <div class="md-title">Me</div>
-          </md-card-header> 
-          </md-card-area>
-        </md-card-media-cover>
-      </md-card>
-    </md-layout>
-  </md-layout>
+  <video-conference></video-conference>
   <md-layout md-gutter>
     <md-layout md-flex="25" md-flex-offset="25">
       <messages v-bind:messages="messages"></messages>
@@ -48,6 +19,7 @@
 <script>
 import {Socket, Presence} from "phoenix"
 import Messages from "./messages.vue"
+import VideoConference from "./video-conference.vue"
 import Peer from "simple-peer"
 import getUserMedia from "getusermedia"
 
@@ -169,7 +141,8 @@ export default {
       joinChannel();
   },
   components: {
-    'messages': Messages
+    'messages': Messages,
+    'video-conference': VideoConference
   },
   methods: {
     sendMessage() {
