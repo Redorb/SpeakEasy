@@ -30,7 +30,7 @@ export default {
     data() {
         return {
             socket: null,
-            channel: null,
+            lobbyChannel: null,
             callChannel: null,
             messages: [],
             message: "",
@@ -57,8 +57,8 @@ export default {
                 }),
                 this.socket.connect()
 
-            this.channel = this.socket.channel("users:lobby", {})
-            this.channel.join()
+            this.lobbyChannel = this.socket.channel("users:lobby", {})
+            this.lobbyChannel.join()
                 .receive("ok", resp => {
                     console.log("Joined users successfully", resp)
                 })
@@ -66,12 +66,12 @@ export default {
                     console.log("Unable to join", resp)
                 })
 
-            this.channel.on(`chat_start`, payload => {
+            this.lobbyChannel.on(`chat_start`, payload => {
                 if (payload.users.includes(window.user_id)) {
                     updateStatus("Another user found, connecting...")
                     let otherUser = payload.users.filter((id) => window.user_id != id)[0]
-                    this.channel.leave()
-                    this.channel = null
+                    this.lobbyChannel.leave()
+                    this.lobbyChannel = null
                     this.callChannel = this.socket.channel(payload.room)
                     this.callChannel.join()
                         .receive("ok", resp => {
