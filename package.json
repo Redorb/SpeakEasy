@@ -9,9 +9,9 @@
     "getusermedia": "^2.0.0",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html",
-    "simple-peer": "^6.1.0",
-    "vue": "^2.1.8",
-    "vue-material": "^0.5.2"
+    "simple-peer": "^6.2.1",
+    "vue": "^2.1.10",
+    "vue-material": "^0.6.3"
   },
   "devDependencies": {
     "babel-brunch": "~6.0.0",

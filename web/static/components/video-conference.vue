@@ -1,11 +1,7 @@
 <template>
 <md-layout md-gutter>
-    <md-layout md-flex="25" md-flex-offset="25" md-gutter>
-        <callee></callee>
-    </md-layout>
-    <md-layout md-flex="25">
-        <caller> </caller>
-    </md-layout>
+    <callee></callee>
+    <caller> </caller>
 </md-layout>
 </template>
 

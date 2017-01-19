@@ -1,16 +1,17 @@
 <template>
 <div class="speakeasy">
+  <md-toolbar>
+    <h1 class="md-title">Speakeasy</h1>
+  </md-toolbar>
   <md-layout md-gutter>
-    <md-layout md-flex="25" md-flex-offset="25"><h4 id="status"></h4></md-layout>
-  </md-layout>
-  <video-conference></video-conference>
-  <md-layout md-gutter>
-    <md-layout md-flex="25" md-flex-offset="25">
-      <messages v-bind:messages="messages"></messages>
-      <div id="your-message">
-        <input type="text" placeholder="What do you have to say?" v-model="message" v-on:keyup.13="sendMessage">
-      </div>
-    </md-layout>
+      <md-layout md-gutter md-column md-flex="33">
+          <h4 id="status"></h4>
+          <messages v-bind:messages="messages"></messages>
+          <div id="your-message">
+            <input type="text" placeholder="What do you have to say?" v-model="message" v-on:keyup.13="sendMessage">
+          </div>
+      </md-layout>
+      <video-conference></video-conference>
   </md-layout>
 </div>
 
@@ -155,10 +156,14 @@ export default {
 
 <style lang="sass">
 .speakeasy {
+  #status {
+    padding-left: 20px;
+  }
   #your-message {
     background: white;
+    padding-left: 20px;
     input {
-      width: 50vw;
+      width: 25vw;
       padding: 5px 8px;
       border-radius: 3px;
       outline: 0;
