@@ -7,7 +7,7 @@
         <md-card-area>
             <md-card-header>
                 <div class="md-title">Them</div>
-            </md-card-header> 
+            </md-card-header>
         </md-card-area>
     </md-card-media-cover>
 </md-card>
